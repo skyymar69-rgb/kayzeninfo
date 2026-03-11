@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+/* ===================================================
+   FONTS
+   No blocking @import – fonts are loaded via <link> in
+   index.html (preload + onload pattern). We declare
+   font-family variables here for Tailwind / CSS usage.
+   =================================================== */
+:root {
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-display: 'Syne', system-ui, sans-serif;
+}
+
+/* ===================================================
+   BASE
+   =================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Respect user preference for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background-color: #0f172a;
+  color: #f1f5f9;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Prevent layout shift from scrollbar appearing */
+  overflow-x: hidden;
+}
+
+/* Hide native cursor when custom cursor is active */
+.custom-cursor-active {
+  cursor: none;
+}
+
+/* ===================================================
+   UTILITIES
+   =================================================== */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Focus-visible ring for accessibility */
+:focus-visible {
+  outline: 2px solid #6366f1;
+  outline-offset: 2px;
+}

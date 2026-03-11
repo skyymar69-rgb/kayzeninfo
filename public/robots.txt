@@ -1,4 +1,6 @@
-# robots.txt
+# robots.txt – kayzen.fr
 User-agent: *
-Disallow: /private/
-Allow: /public/
+Allow: /
+Disallow: /assets/
+
+Sitemap: https://kayzen.fr/sitemap.xml
